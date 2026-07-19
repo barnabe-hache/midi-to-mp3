@@ -7,3 +7,4 @@ pyloudnorm
 pydub
 numpy
 soundfile
+mido

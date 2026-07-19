@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import soundfonts, render, convert
+from app.routers import soundfonts, render, convert, preview
 
 app = FastAPI(title="MIDI to MP3 API")
 
@@ -17,6 +17,7 @@ app.include_router(render.router)
 app.include_router(soundfonts.router)
 app.include_router(render.router)
 app.include_router(convert.router)
+app.include_router(preview.router)
 
 @app.get("/health")
 def health_check():
