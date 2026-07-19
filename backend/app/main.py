@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.routers import soundfonts, render, convert
 
 app = FastAPI(title="MIDI to MP3 API")
 
-# Autorise le frontend (Vue, en dev sur localhost:5173) à appeler l'API
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
@@ -11,6 +11,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(soundfonts.router)
+app.include_router(render.router)
+app.include_router(soundfonts.router)
+app.include_router(render.router)
+app.include_router(convert.router)
 
 @app.get("/health")
 def health_check():
