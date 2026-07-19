@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pyfluidsynth
+pedalboard
+pyloudnorm
+pydub
+numpy
+soundfile
