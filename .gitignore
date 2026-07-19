@@ -1,0 +1,19 @@
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+
+# Fichiers temporaires de traitement audio
+backend/tmp/
+
+# Node / Vue
+frontend/node_modules/
+frontend/dist/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Editeurs
+.vscode/
+.idea/
