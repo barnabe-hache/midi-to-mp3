@@ -17,3 +17,4 @@ class EffectsParams(BaseModel):
     highpass_freq: float | None = Field(None, ge=20.0, le=2000.0)
     lowpass_freq: float | None = Field(None, ge=1000.0, le=20000.0)
     target_lufs: float = Field(-14.0, ge=-30.0, le=-6.0)
+    compression_amount: float = Field(0.2, ge=0.0, le=1.0)

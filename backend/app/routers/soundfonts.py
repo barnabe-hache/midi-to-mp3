@@ -10,7 +10,7 @@ SOUNDFONTS_DIR = Path(__file__).resolve().parent.parent.parent / "soundfonts"
 def list_soundfonts():
     files = sorted(SOUNDFONTS_DIR.glob("*.sf2"))
     soundfonts = [
-        SoundfontInfo(id=f.stem, name=f.stem.replace("_", " ").title())
+        SoundfontInfo(id=f.stem, name=f.stem)  # nom = nom de fichier sans extension, tel quel
         for f in files
     ]
     return SoundfontListResponse(soundfonts=soundfonts)

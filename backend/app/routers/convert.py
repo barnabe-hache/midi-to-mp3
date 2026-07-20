@@ -68,6 +68,7 @@ async def convert_midi_to_mp3(
                 dry_level=params.dry_level,
                 highpass_freq=params.highpass_freq,
                 lowpass_freq=params.lowpass_freq,
+                compression_amount=params.compression_amount,
             )
 
             # 5. Normalisation loudness
