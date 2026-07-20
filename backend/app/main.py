@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import soundfonts, render, convert, preview
+from app.routers import soundfonts, convert, preview
 
 app = FastAPI(title="MIDI to MP3 API")
 
@@ -13,9 +13,7 @@ app.add_middleware(
 )
 
 app.include_router(soundfonts.router)
-app.include_router(render.router)
 app.include_router(soundfonts.router)
-app.include_router(render.router)
 app.include_router(convert.router)
 app.include_router(preview.router)
 
