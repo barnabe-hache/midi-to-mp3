@@ -35,7 +35,7 @@ defineProps<{
 
 .progress__bar-fill {
   height: 100%;
-  background: var(--color-signal);
+  background: var(--gradient-signal);
   border-radius: 3px;
   transition: width 0.2s ease;
 }

@@ -6,17 +6,24 @@
   --color-ink: #16181D;
   --color-ink-muted: #5B6169;
   --color-border: #E2E4E8;
+
   --color-signal: #2F6F5E;
+  --color-signal-light: #4FA98A;
   --color-signal-soft: #E8F0EE;
+  --color-gold: #E8B94A;
+  --color-gold-soft: #FBF1DC;
   --color-alert: #B5493B;
   --color-alert-soft: #F7E9E7;
+
+  --gradient-signal: linear-gradient(135deg, var(--color-signal), var(--color-signal-light));
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
 
   color-scheme: light;
 }
@@ -32,13 +39,9 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   min-height: 100vh;
-  line-height: 1.5;
-}
-
-#app {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
+  line-height: 1.55;
+  overflow-x: hidden;
+  position: relative;
 }
 
 h1, h2, h3 {
@@ -52,9 +55,43 @@ button {
   cursor: pointer;
 }
 
+#app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+  position: relative;
+}
+
 :focus-visible {
   outline: 2px solid var(--color-signal);
   outline-offset: 2px;
+}
+
+/* Decorative background blobs, same treatment as the landing page */
+.bg-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.3;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-blob--1 {
+  width: 380px;
+  height: 380px;
+  top: -100px;
+  left: -120px;
+  background: radial-gradient(circle, var(--color-signal-light), transparent 70%);
+}
+
+.bg-blob--2 {
+  width: 340px;
+  height: 340px;
+  top: 400px;
+  right: -160px;
+  background: radial-gradient(circle, var(--color-gold), transparent 70%);
+  opacity: 0.2;
 }
 
 @media (prefers-reduced-motion: reduce) {

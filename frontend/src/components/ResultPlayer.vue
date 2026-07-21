@@ -19,7 +19,7 @@ defineProps<{
 .result {
   margin-top: 2.5rem;
   background: var(--color-signal-soft);
-  border: 1px solid var(--color-signal);
+  border: 1.5px solid var(--color-signal);
   border-radius: var(--radius-md);
   padding: 1.2rem;
 }
@@ -36,17 +36,19 @@ defineProps<{
 
 .result__download {
   display: inline-block;
-  background: var(--color-signal);
-  color: var(--color-surface);
+  background: var(--gradient-signal);
+  color: #fff;
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 500;
-  padding: 0.55rem 1.1rem;
+  padding: 0.6rem 1.2rem;
   border-radius: var(--radius-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .result__download:hover {
-  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(47, 111, 94, 0.28);
 }
 
 .result__limit-note {

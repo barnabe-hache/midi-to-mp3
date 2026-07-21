@@ -9,19 +9,16 @@ import ResultPlayer from './components/ResultPlayer.vue'
 import type { SelectedPiano, EffectsParams, ConversionStatus } from './types'
 import { convertMidiToMp3, previewSoundfont } from './composables/useApi'
 
-// --- État du fichier MIDI et du piano ---
 const midiFile = ref<File | null>(null)
 const selectedPiano = ref<SelectedPiano | null>(null)
 const effectsParams = ref<EffectsParams | null>(null)
 
-// --- État de la conversion finale ---
 const status = ref<ConversionStatus>('idle')
 const phase = ref<'uploading' | 'processing'>('uploading')
 const uploadPercent = ref(0)
 const resultUrl = ref<string | null>(null)
 const conversionError = ref<string | null>(null)
 
-// --- État de l'écoute "Play sample with these effects" ---
 const effectsPreviewPlaying = ref(false)
 const effectsPreviewError = ref<string | null>(null)
 
@@ -94,12 +91,18 @@ async function startConversion() {
 </script>
 
 <template>
+  <div class="bg-blob bg-blob--1"></div>
+  <div class="bg-blob bg-blob--2"></div>
+
   <AppHeader />
   <main>
-    <h1>MIDI to MP3</h1>
-    <p class="subtitle">
-      Turn your MIDI file into an MP3 with a natural piano sound and the effects you choose.
-    </p>
+    <div class="intro">
+      <span class="intro__badge">🎹 No signup · Unlimited · Free</span>
+      <h1>Convert your MIDI</h1>
+      <p class="intro__subtitle">
+        Pick a piano, tweak the effects, and export a track ready for Spotify, YouTube, or Instagram.
+      </p>
+    </div>
 
     <MidiDropzone @file-selected="onFileSelected" />
     <PianoSelector @piano-selected="onPianoSelected" />
@@ -131,9 +134,36 @@ async function startConversion() {
 </template>
 
 <style scoped>
-.subtitle {
+.intro {
+  text-align: center;
+  padding: 3rem 0 2.5rem;
+}
+
+.intro__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 500;
   color: var(--color-ink-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 1.3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.intro h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.7rem;
+}
+
+.intro__subtitle {
+  color: var(--color-ink-muted);
+  font-size: 1rem;
+  max-width: 440px;
+  margin: 0 auto;
 }
 
 .preview-effects-btn {
@@ -144,13 +174,15 @@ async function startConversion() {
   border: 1px solid var(--color-signal);
   color: var(--color-signal);
   border-radius: var(--radius-sm);
-  padding: 0.6rem;
+  padding: 0.65rem;
   font-size: 0.88rem;
   font-weight: 500;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
 .preview-effects-btn:hover:not(:disabled) {
   background: var(--color-signal-soft);
+  transform: translateY(-1px);
 }
 
 .preview-effects-btn:disabled {
@@ -162,23 +194,27 @@ async function startConversion() {
   display: block;
   width: 100%;
   margin-top: 1rem;
-  background: var(--color-ink);
-  color: var(--color-surface);
+  background: var(--gradient-signal);
+  color: #fff;
   border: none;
   border-radius: var(--radius-sm);
-  padding: 0.9rem;
+  padding: 0.95rem;
   font-size: 0.95rem;
   font-weight: 500;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .convert-btn:hover:not(:disabled) {
-  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(47, 111, 94, 0.32);
 }
 
 .convert-btn:disabled {
   background: var(--color-border);
   color: var(--color-ink-muted);
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .error-banner {

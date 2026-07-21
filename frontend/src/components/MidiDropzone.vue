@@ -75,7 +75,11 @@ defineExpose({ reset })
   background: var(--color-surface);
   padding: 2.5rem 1.5rem;
   text-align: center;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dropzone:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
 
 .dropzone--dragging {
@@ -102,16 +106,18 @@ defineExpose({ reset })
 
 .dropzone__button {
   display: inline-block;
-  border: 1px solid var(--color-ink);
+  background: var(--gradient-signal);
+  color: #fff;
   border-radius: var(--radius-sm);
-  padding: 0.5rem 1.25rem;
+  padding: 0.55rem 1.3rem;
   font-size: 0.875rem;
   font-weight: 500;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .dropzone__button:hover {
-  background: var(--color-ink);
-  color: var(--color-surface);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(47, 111, 94, 0.28);
 }
 
 .dropzone__filename {

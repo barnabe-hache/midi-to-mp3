@@ -70,7 +70,7 @@ async function playSample(target: { id: string; soundfontId?: string; file?: Fil
 
 <template>
   <section class="piano-selector">
-    <h2 class="section-title">Piano</h2>
+    <h2 class="section-title">Piano - select one before tweaking effects</h2>
 
     <p v-if="isLoading" class="muted">Loading pianos...</p>
     <p v-else-if="loadError" class="error">{{ loadError }}</p>
@@ -144,17 +144,24 @@ async function playSample(target: { id: string; soundfontId?: string; file?: Fil
 
 .piano-item {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background: var(--color-surface);
-  padding: 0.7rem 0.9rem;
-  transition: border-color 0.15s ease;
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.piano-item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
 }
 
 .piano-item--selected {
   border-color: var(--color-signal);
+  background: var(--color-signal-soft);
 }
 
 .piano-item__select {
@@ -166,6 +173,9 @@ async function playSample(target: { id: string; soundfontId?: string; file?: Fil
   color: var(--color-ink);
   flex: 1;
   cursor: pointer;
+  padding: 0.7rem 0.9rem;
+  display: flex;
+  align-items: center;
 }
 
 .piano-item__select--file {
@@ -178,13 +188,15 @@ async function playSample(target: { id: string; soundfontId?: string; file?: Fil
 }
 
 .piano-item__play {
-  background: none;
-  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-signal);
   border-radius: var(--radius-sm);
   padding: 0.35rem 0.7rem;
   font-size: 0.8rem;
   color: var(--color-signal);
   flex-shrink: 0;
+  margin: 0.7rem 0.9rem 0.7rem 0;
+  transition: background-color 0.15s ease;
 }
 
 .piano-item__play:hover:not(:disabled) {

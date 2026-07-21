@@ -20,12 +20,19 @@ defineProps<{
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--color-border);
-  color: var(--color-ink-muted);
+  background: var(--color-signal-soft);
+  color: var(--color-signal);
   font-size: 0.68rem;
   font-family: var(--font-body);
+  font-weight: 600;
   cursor: default;
   margin-left: 0.4rem;
+  transition: background-color 0.15s ease;
+}
+
+.info-tooltip:hover {
+  background: var(--color-signal);
+  color: #fff;
 }
 
 .info-tooltip__bubble {

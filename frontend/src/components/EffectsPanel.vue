@@ -206,18 +206,27 @@ watch(() => params.compression_amount, (v) => {
   text-decoration: underline;
 }
 
+.reset-btn:hover {
+  color: var(--color-signal);
+}
+
 .effect-group {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1.1rem 1.2rem;
   margin-bottom: 1rem;
+  transition: box-shadow 0.15s ease;
+}
+
+.effect-group:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
 
 .effect-group__title {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-ink-muted);
+  color: var(--color-signal);
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-bottom: 0.9rem;
@@ -235,6 +244,12 @@ watch(() => params.compression_amount, (v) => {
   margin-bottom: 0;
 }
 
+.slider-label {
+  display: flex;
+  align-items: center;
+  font-size: 0.88rem;
+}
+
 .value-input {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -244,6 +259,7 @@ watch(() => params.compression_amount, (v) => {
   border-radius: var(--radius-sm);
   padding: 0.2rem 0.4rem;
   width: 100%;
+  transition: border-color 0.15s ease;
 }
 
 .value-input:focus-visible {
@@ -260,13 +276,6 @@ watch(() => params.compression_amount, (v) => {
   font-size: 0.78rem;
   color: var(--color-ink-muted);
 }
-
-.slider-label {
-  display: flex;
-  align-items: center;
-  font-size: 0.88rem;
-}
-
 
 input[type='range'] {
   accent-color: var(--color-signal);
