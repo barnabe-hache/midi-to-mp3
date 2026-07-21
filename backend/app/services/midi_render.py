@@ -12,7 +12,8 @@ def render_midi_to_wav(midi_path: str, soundfont_path: str, output_wav_path: str
         "-ni",
         "-F", output_wav_path,
         "-r", str(SAMPLE_RATE),
-        "-o", "audio.file.format=s16",   # PCM 16 bits, compatible avec tous les lecteurs
+        "-o", "audio.file.format=float",   # avant : "audio.file.format=s16"
+        "-g", "1.0",                        # gain neutre, la normalisation gère le niveau final
         soundfont_path,
         midi_path,
     ]
