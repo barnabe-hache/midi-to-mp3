@@ -1,11 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 :root {
-  font-family: 'Inter', system-ui, sans-serif;
+  --color-bg: #F5F5F3;
+  --color-surface: #FFFFFF;
+  --color-ink: #16181D;
+  --color-ink-muted: #5B6169;
+  --color-border: #E2E4E8;
+  --color-signal: #2F6F5E;
+  --color-signal-soft: #E8F0EE;
+  --color-alert: #B5493B;
+  --color-alert-soft: #F7E9E7;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
   color-scheme: light;
-  --color-bg: #fafafa;
-  --color-surface: #ffffff;
-  --color-text: #1a1a1a;
-  --color-primary: #2563eb;
-  --color-border: #e5e7eb;
 }
 
 * {
@@ -16,12 +29,37 @@
 
 body {
   background-color: var(--color-bg);
-  color: var(--color-text);
+  color: var(--color-ink);
+  font-family: var(--font-body);
   min-height: 100vh;
+  line-height: 1.5;
 }
 
 #app {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 3rem 1.5rem 4rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
