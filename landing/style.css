@@ -210,7 +210,7 @@ img {
 }
 
 .hero__note {
-  margin-top: 1px;
+  margin-top: 1rem;
   font-size: 0.82rem;
   color: var(--color-ink-muted);
 }
