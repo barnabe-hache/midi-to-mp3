@@ -1,6 +1,7 @@
 <script setup lang="ts">
 defineProps<{
   audioUrl: string
+  downloadFilename: string
 }>()
 </script>
 
@@ -8,7 +9,7 @@ defineProps<{
   <section class="result">
     <h2 class="section-title">Your track</h2>
     <audio :src="audioUrl" controls class="result__player"></audio>
-    <a :href="audioUrl" download="conversion.mp3" class="result__download">
+    <a :href="audioUrl" :download="downloadFilename" class="result__download">
       Download MP3
     </a>
     <p class="result__limit-note">Free plan: up to 10 conversions per day.</p>

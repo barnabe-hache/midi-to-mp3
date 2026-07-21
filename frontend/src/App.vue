@@ -26,6 +26,10 @@ const canConvert = computed(() =>
   midiFile.value !== null && selectedPiano.value !== null && status.value !== 'converting'
 )
 
+const downloadFilename = computed(() =>
+  midiFile.value ? buildDownloadFilename(midiFile.value.name) : 'conversion_notewave.mp3'
+)
+
 function onFileSelected(file: File) {
   midiFile.value = file
   resultUrl.value = null
@@ -38,6 +42,11 @@ function onPianoSelected(piano: SelectedPiano) {
 
 function onParamsChanged(params: EffectsParams) {
   effectsParams.value = params
+}
+
+function buildDownloadFilename(originalName: string): string {
+  const nameWithoutExt = originalName.replace(/\.(mid|midi)$/i, '')
+  return `${nameWithoutExt}_notewave.mp3`
 }
 
 async function playEffectsSample() {
@@ -129,7 +138,11 @@ async function startConversion() {
 
     <p v-if="status === 'error'" class="error-banner">{{ conversionError }}</p>
 
-    <ResultPlayer v-if="status === 'done' && resultUrl" :audio-url="resultUrl" />
+    <ResultPlayer
+      v-if="status === 'done' && resultUrl"
+      :audio-url="resultUrl"
+      :download-filename="downloadFilename"
+    />
   </main>
 </template>
 
