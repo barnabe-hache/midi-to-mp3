@@ -8,3 +8,5 @@ pydub
 numpy
 soundfile
 mido
+slowapi
+python-dotenv

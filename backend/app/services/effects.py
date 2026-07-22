@@ -29,7 +29,7 @@ def apply_effects(
     if compression_amount > 0:
         threshold_db = -10 - 30 * compression_amount   # de -10 dB à -40 dB
         ratio = 1 + 3 * compression_amount              # de 1:1 à 4:1
-        effects.append(Compressor(threshold_db=threshold_db, ratio=ratio))
+        effects.append(Compressor(threshold_db=threshold_db, ratio=ratio, attack_ms=10.0, release_ms=120.0))
 
     effects.append(
         Reverb(
@@ -51,4 +51,4 @@ def apply_effects(
     if processed.ndim == 2:
         processed = processed.T
 
-    sf.write(output_wav_path, processed, sample_rate)
+    sf.write(output_wav_path, processed, sample_rate, subtype='FLOAT')

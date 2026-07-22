@@ -12,8 +12,10 @@ def render_midi_to_wav(midi_path: str, soundfont_path: str, output_wav_path: str
         "-ni",
         "-F", output_wav_path,
         "-r", str(SAMPLE_RATE),
-        "-o", "audio.file.format=float",   # avant : "audio.file.format=s16"
-        "-g", "1.0",                        # gain neutre, la normalisation gère le niveau final
+        "-o", "audio.file.format=float",
+        "-g", "1.0",
+        "-R", "0",   # désactive la reverb interne de FluidSynth
+        "-C", "0",   # désactive le chorus interne de FluidSynth
         soundfont_path,
         midi_path,
     ]

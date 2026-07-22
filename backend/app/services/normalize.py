@@ -21,7 +21,7 @@ def normalize_loudness(
     current_loudness = meter.integrated_loudness(audio)
 
     if current_loudness == float("-inf"):
-        sf.write(output_wav_path, audio, sample_rate)
+        sf.write(output_wav_path, audio, sample_rate, subtype='FLOAT')
         return
 
     normalized_audio = pyln.normalize.loudness(audio, current_loudness, target_lufs)
@@ -39,4 +39,4 @@ def normalize_loudness(
     if limited.ndim == 2:
         limited = limited.T
 
-    sf.write(output_wav_path, limited, sample_rate)
+    sf.write(output_wav_path, limited, sample_rate, subtype='FLOAT')
