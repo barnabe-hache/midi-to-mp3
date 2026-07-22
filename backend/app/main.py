@@ -1,3 +1,9 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
+
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -11,7 +17,7 @@ app.state.limiter = limiter
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
