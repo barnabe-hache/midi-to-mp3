@@ -105,4 +105,5 @@ async def convert_midi_to_mp3(
         traceback.print_exc()
         raise HTTPException(500, f"Server error during conversion: {e}")
 
+    print(f"CONVERSION_SUCCESS filename={midi_file.filename}")
     return FileResponse(final_tmp.name, media_type="audio/mpeg", filename="conversion.mp3")
