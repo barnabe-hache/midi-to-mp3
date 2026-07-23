@@ -232,12 +232,43 @@ watch(() => params.compression_amount, (v) => {
   margin-bottom: 0.9rem;
 }
 
-.slider-row {
-  display: grid;
-  grid-template-columns: 160px 1fr 60px;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.7rem;
+.slider-row,
+.toggle-row {
+  min-width: 0;
+}
+
+input[type='range'] {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .slider-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.4rem;
+  }
+
+  .slider-label {
+    justify-content: space-between;
+  }
+
+  .value-input {
+    width: 70px;
+    justify-self: end;
+  }
+
+  .toggle-row {
+    flex-wrap: wrap;
+  }
+
+  .toggle-label {
+    min-width: 100%;
+  }
+
+  .toggle-row input[type='range'] {
+    width: 100%;
+    flex: 1 1 100%;
+  }
 }
 
 .slider-row:last-child {

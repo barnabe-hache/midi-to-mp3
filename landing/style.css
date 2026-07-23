@@ -436,3 +436,29 @@ img {
   color: var(--color-ink-muted);
   font-size: 0.85rem;
 }
+
+/* ---------- FAQ ---------- */
+.faq {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.faq:last-child .faq-item:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  color: var(--color-ink-muted);
+  font-size: 0.92rem;
+  max-width: 640px;
+}

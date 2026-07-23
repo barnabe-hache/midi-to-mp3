@@ -3,9 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notewave — Turn your MIDI into a natural-sounding MP3</title>
-  <meta name="description" content="Convert your MIDI files into high-quality MP3 with a natural piano sound, reverb, and studio effects. Free, unlimited, no signup." />
+  <title>Notewave — Free MIDI to MP3 Converter with Natural Piano Sound</title>
+  <meta name="description" content="Convert MIDI to MP3 online for free, with a natural piano sound and studio reverb. No signup, no limits on quality — export ready for Spotify, YouTube, and Instagram." />
+  <link rel="canonical" href="https://notewaveapp.com/" />
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://notewaveapp.com/" />
+  <meta property="og:title" content="Notewave — Free MIDI to MP3 Converter with Natural Piano Sound" />
+  <meta property="og:description" content="Convert MIDI to MP3 online for free, with a natural piano sound and studio reverb. No signup, no limits on quality." />
+  <!-- <meta property="og:image" content="https://notewaveapp.com/assets/og-image.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Notewave — Free MIDI to MP3 Converter" />
+  <meta name="twitter:description" content="Convert MIDI to MP3 online for free, with a natural piano sound and studio reverb." />
+  <meta name="twitter:image" content="https://notewaveapp.com/assets/og-image.png" /> -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Notewave",
+    "url": "https://notewaveapp.com",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Free online tool to convert MIDI files to MP3 with a natural piano sound, reverb, and studio effects."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a MIDI file to MP3 for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upload your .mid file to Notewave, pick a piano sound, adjust the effects if you want, then click convert. Your MP3 is ready to preview and download in seconds, with no account needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my MP3 sound good on Spotify, YouTube, or Instagram?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every export is loudness-normalized to the standard used by streaming and social platforms, so your track sounds right the moment it's uploaded."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to know anything about audio production?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Default settings are tuned to sound natural out of the box. You can tweak reverb, tone, and dynamics if you want more control, but it's optional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use my own piano sound?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can upload your own .sf2 soundfont file instead of using one of the built-in piano sounds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a limit to how many MIDI files I can convert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The free plan allows up to 10 conversions per day, with a maximum file size of 4 MB per MIDI file."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -26,8 +104,9 @@
 
   <section class="hero">
     <span class="hero__badge">🎹 No signup · Unlimited · Free</span>
-    <h1>Turn your MIDI into a <span>natural-sounding</span> MP3</h1>
+    <h1>Convert MIDI to MP3 with a <span>natural piano sound</span></h1>
     <p>
+      Notewave turns any MIDI file into a real-sounding MP3 in two clicks.
       Pick a natural piano, add a touch of reverb, and get a track that's ready
       for Spotify, YouTube, or Instagram — even if you've never touched audio software before.
     </p>
@@ -40,7 +119,7 @@
     <h2>Hear the difference</h2>
     <div class="comparison">
       <div class="comparison__card">
-        <p class="comparison__label">Basic MIDI converter</p>
+        <p class="comparison__label">Basic converter</p>
         <audio controls src="assets/demo-basictool_nada_te_turbe.mp3"></audio>
         <audio controls src="assets/demo-basictool_chopin.mp3"></audio>
       </div>
@@ -52,25 +131,24 @@
     </div>
   </section>
 
-
-    <section class="section">
+  <section class="section">
     <p class="section-eyebrow">Three steps</p>
-    <h2>How it works</h2>
+    <h2>How to convert a MIDI file to MP3</h2>
     <div class="steps">
       <div class="step">
         <span class="step__number">1</span>
-        <h3>Upload your MIDI</h3>
-        <p>Drop your .mid file, no installation required.</p>
+        <h3>Upload your MIDI file</h3>
+        <p>Drop your .mid file directly in your browser, no installation required.</p>
       </div>
       <div class="step">
         <span class="step__number">2</span>
         <h3>Pick a piano and tweak effects</h3>
-        <p>Choose a natural piano sound and adjust reverb and tone to taste.</p>
+        <p>Choose a natural piano sound, or import your own, and adjust reverb and tone to taste.</p>
       </div>
       <div class="step">
         <span class="step__number">3</span>
         <h3>Preview and download</h3>
-        <p>Listen to your MP3, and download it once it sounds right.</p>
+        <p>Listen to your MP3, and download it once it sounds right — ready to share.</p>
       </div>
     </div>
   </section>
@@ -80,7 +158,7 @@
     <h2>Ready for your favorite platforms</h2>
     <p class="platforms__note">
       Every export is loudness-normalized specifically for streaming and social platforms,
-      so your track sounds right the moment it's uploaded.
+      so your track sounds right the moment it's uploaded — no extra mastering needed.
     </p>
     <div class="platforms__logos">
       <img src="assets/Spotify_logo.svg" alt="Spotify" />
@@ -93,21 +171,60 @@
     <p class="section-eyebrow">Why Notewave</p>
     <h2>Simple enough for beginners, precise enough for pros</h2>
     <div class="features">
-      <div class="feature-card">
-        <h3>Pick your piano, or bring your own</h3>
-        <p>Choose from a curated set of natural piano sounds, or drop in your own .sf2 soundfont.</p>
+      <div class="feature-row">
+        <span class="feature-row__index">01</span>
+        <div>
+          <h3>Pick your piano, or bring your own</h3>
+          <p>Choose from a curated set of natural piano sounds, or drop in your own .sf2 soundfont for full control over the tone.</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>Effects that just make sense</h3>
-        <p>Reverb, tone, and dynamics — with plain-language explanations for every control.</p>
+      <div class="feature-row">
+        <span class="feature-row__index">02</span>
+        <div>
+          <h3>Effects that just make sense</h3>
+          <p>Reverb, tone filters, and dynamics — each with a plain-language explanation of what it does and when to use it.</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>Platform-ready loudness</h3>
-        <p>Every file is normalized to the standard used by Spotify, YouTube, and Instagram.</p>
+      <div class="feature-row">
+        <span class="feature-row__index">03</span>
+        <div>
+          <h3>Platform-ready loudness</h3>
+          <p>Every file is normalized to the loudness standard used by Spotify, YouTube, and Instagram — no separate mastering step.</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>Natural sound, zero learning curve</h3>
-        <p>Default settings are tuned to sound great out of the box — tweak only if you want to.</p>
+      <div class="feature-row">
+        <span class="feature-row__index">04</span>
+        <div>
+          <h3>Natural sound, zero learning curve</h3>
+          <p>Default settings are tuned to sound great out of the box. Tweak them only if you want more control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-eyebrow">Questions</p>
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>How do I convert a MIDI file to MP3 for free?</h3>
+        <p>Upload your .mid file to Notewave, pick a piano sound, adjust the effects if you want, then click convert. Your MP3 is ready to preview and download in seconds, with no account needed.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Will my MP3 sound good on Spotify, YouTube, or Instagram?</h3>
+        <p>Yes. Every export is loudness-normalized to the standard used by streaming and social platforms, so your track sounds right the moment it's uploaded.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need to know anything about audio production?</h3>
+        <p>No. Default settings are tuned to sound natural out of the box. You can tweak reverb, tone, and dynamics if you want more control, but it's optional.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I use my own piano sound?</h3>
+        <p>Yes, you can upload your own .sf2 soundfont file instead of using one of the built-in piano sounds.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is there a limit to how many MIDI files I can convert?</h3>
+        <p>This tool allows up to 100 conversions per day, with a maximum file size of 4 MB per MIDI file.</p>
       </div>
     </div>
   </section>
@@ -119,7 +236,7 @@
   </div>
 
   <footer class="site-footer">
-    Notewave — Free MIDI to MP3 converter
+    Notewave — Free MIDI to MP3 converter — Barnabé Hache
   </footer>
 
 </body>
