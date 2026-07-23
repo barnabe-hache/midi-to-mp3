@@ -232,43 +232,11 @@ watch(() => params.compression_amount, (v) => {
   margin-bottom: 0.9rem;
 }
 
-.slider-row,
-.toggle-row {
-  min-width: 0;
-}
-
-input[type='range'] {
-  min-width: 0;
-  width: 100%;
-}
-
-@media (max-width: 640px) {
-  .slider-row {
-    grid-template-columns: 1fr;
-    row-gap: 0.4rem;
-  }
-
-  .slider-label {
-    justify-content: space-between;
-  }
-
-  .value-input {
-    width: 70px;
-    justify-self: end;
-  }
-
-  .toggle-row {
-    flex-wrap: wrap;
-  }
-
-  .toggle-label {
-    min-width: 100%;
-  }
-
-  .toggle-row input[type='range'] {
-    width: 100%;
-    flex: 1 1 100%;
-  }
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.7rem;
 }
 
 .slider-row:last-child {
@@ -279,6 +247,13 @@ input[type='range'] {
   display: flex;
   align-items: center;
   font-size: 0.88rem;
+  flex: 0 0 150px;
+}
+
+input[type='range'] {
+  accent-color: var(--color-signal);
+  flex: 1;
+  min-width: 0;
 }
 
 .value-input {
@@ -289,7 +264,8 @@ input[type='range'] {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 0.2rem 0.4rem;
-  width: 100%;
+  width: 56px;
+  flex: 0 0 56px;
   transition: border-color 0.15s ease;
 }
 
@@ -298,18 +274,15 @@ input[type='range'] {
 }
 
 .value-input--wide {
-  width: 70px;
-  flex-shrink: 0;
+  width: 68px;
+  flex: 0 0 68px;
 }
 
 .unit {
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--color-ink-muted);
-}
-
-input[type='range'] {
-  accent-color: var(--color-signal);
+  flex: 0 0 auto;
 }
 
 .toggle-row {
@@ -328,11 +301,37 @@ input[type='range'] {
   align-items: center;
   font-size: 0.88rem;
   gap: 0.5rem;
-  flex-shrink: 0;
-  min-width: 190px;
+  flex: 0 0 190px;
 }
 
 .toggle-row input[type='range'] {
   flex: 1;
+}
+
+@media (max-width: 640px) {
+  .slider-row {
+    flex-wrap: wrap;
+  }
+
+  .slider-label {
+    flex: 1 1 100%;
+    justify-content: space-between;
+  }
+
+  input[type='range'] {
+    flex: 1 1 calc(100% - 70px);
+  }
+
+  .toggle-row {
+    flex-wrap: wrap;
+  }
+
+  .toggle-label {
+    flex: 1 1 100%;
+  }
+
+  .toggle-row input[type='range'] {
+    flex: 1 1 100%;
+  }
 }
 </style>
